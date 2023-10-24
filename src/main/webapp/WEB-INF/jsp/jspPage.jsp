@@ -159,7 +159,7 @@
 											<div class="col-3">
 												<label for="">Photo</label>
 												<input class="form-control" type="file" name="photo" id="photo">
-												<span id="oldPhoto">${employee.empPhoto}</span>
+												<span>${employee.empPhoto}</span>
 											</div>
 
 										</div>
@@ -187,14 +187,16 @@
 							<div class="card-body">
 								<table class="table table-bordered table-hover" id="empTable">
 									<thead class="bg-info-subtle">
-										<th>Sl#</th>
-										<th>Name</th>
-										<th>Mobile No</th>
-										<th>Email</th>
-										<th>DOB</th>
-										<th>Salary</th>
-										<th>Photo</th>
-										<th>Action</th>
+										<tr>
+											<th>Sl#</th>
+											<th>Name</th>
+											<th>Mobile No</th>
+											<th>Email</th>
+											<th>DOB</th>
+											<th>Salary</th>
+											<th>Photo</th>
+											<th>Action</th>
+										</tr>
 									</thead>
 									<tbody>
 										<c:forEach items="${empList}" var="emp" varStatus="counter">
@@ -345,15 +347,15 @@
 								// ]
 								//Modify Buttons
 								buttons: [
-									// { extend: 'copy', text: 'Copy to Clipboard', filename: 'citizen_copy ' + formattedDate },
-									// { extend: 'csv', text: 'CSV', filename: 'citizen_csv ' + formattedDate },
+									 { extend: 'copy', text: 'Copy to Clipboard', filename: 'citizen_copy ' + formattedDate },
+									 { extend: 'csv', text: 'CSV', filename: 'citizen_csv ' + formattedDate },
 									{
 										extend: 'excel', text: 'Export to Excel', filename: 'citizen_excel ' + formattedDate, exportOptions: {
 											columns: [0, 1, 2, 3, 4, 5] // Replace with the column indices you want to export
 										}
 									},
-									// { extend: 'pdf', text: 'PDF', filename: 'citizen_pdf ' + formattedDate },
-									// { extend: 'print', text: 'Print' },
+									 { extend: 'pdf', text: 'PDF', filename: 'citizen_pdf ' + formattedDate },
+									 { extend: 'print', text: 'Print' },
 									// 'colvis'
 
 								],
